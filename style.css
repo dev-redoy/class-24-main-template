@@ -1,6 +1,7 @@
 body {
     font-family: 'Spartan'sans-serif;
     background-color: #F6F9FC;
+    overflow-x: hidden;
 }
 
 img {
@@ -98,7 +99,45 @@ img {
     color: #3E69EC;
     padding: 10px 30px;
     margin-left: 25px;
+    position: relative;
+    border: transparent;
+    z-index: 1;
+    font-weight: 600;
+
+
 }
+
+.my-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #7773FF;
+    border-radius: 25px;
+    transition: .4s;
+    opacity: 0;
+    visibility: hidden;
+
+
+}
+
+.my-btn:hover::before {
+    width: 100%;
+    opacity: 1;
+    color: #fff !important;
+    z-index: -1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.my-btn:hover span {
+    color: #fff;
+}
+
+
+
 
 /* banner section css  */
 section {}
@@ -125,9 +164,17 @@ section {}
     color: #767676;
 }
 
-.banner-content .btn {
+.banner-content .second-btn {
     background: #3763EB;
-    font-weight: 500 !important;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 25px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.banner-content .second-btn:hover{
+    background: #000;
 }
 
 .banner-image {
@@ -179,6 +226,18 @@ section {}
 .service-section .banner-content h5 {
     color: #757FED;
 }
+.service-section .banner-content h1 {
+    position: relative;
+}
+.service-section .banner-content h1::before {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    height: 3px;
+    width: 50px;
+    background-color: #3763EB;
+}
 
 .card {
     border: 0;
@@ -190,6 +249,7 @@ section {}
 .card:hover {
     background-color: #3066ED;
     color: #fff;
+    transform: scale(1.01);
 }
 
 .card:hover span {
@@ -250,11 +310,12 @@ section {}
     background-size: cover;
     padding: 100px 0;
 }
-.footer-section::before{
+
+.footer-section::before {
     content: "";
     height: 100%;
     width: 100%;
-    
+
 }
 
 .footer-content {}
@@ -270,17 +331,18 @@ section {}
     padding-bottom: 36px;
     position: relative;
 }
+
 .footer-content h2::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 10px;
-	height: 2px;
-	width: 50px;
-	margin: auto;
-	background-color: #fff;
-	transition: .4s;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    height: 2px;
+    width: 50px;
+    margin: auto;
+    background-color: #fff;
+    transition: .4s;
 }
 
 .footer-content p {
@@ -289,28 +351,29 @@ section {}
 }
 
 .play-animation-btn {
-	width: 110px;
-	height: 110px;
-	display: inline-block;
-	background-color: #fff;
-	font-size: 25px;
-	text-align: center;
-	line-height: 110px;
-	color: #3763EB;
-	border-radius: 50%;
-	position: relative;
+    width: 110px;
+    height: 110px;
+    display: inline-block;
+    background-color: #fff;
+    font-size: 25px;
+    text-align: center;
+    line-height: 110px;
+    color: #3763EB;
+    border-radius: 50%;
+    position: relative;
     margin-top: 60px;
     transition: .8s;
 }
-.play-animation-btn:hover{
+
+.play-animation-btn:hover {
     color: #fff;
     background-color: #3763EB;
 }
 
-.play-animation-btn::before{
+.play-animation-btn::before {
     content: "";
     width: 110px;
-	height: 110px;
+    height: 110px;
     line-height: 110px;
     border-radius: 50%;
     position: absolute;
@@ -322,10 +385,10 @@ section {}
 
 }
 
-.play-animation-btn::after{
+.play-animation-btn::after {
     content: "";
     width: 110px;
-	height: 110px;
+    height: 110px;
     line-height: 110px;
     border-radius: 50%;
     position: absolute;
@@ -335,33 +398,41 @@ section {}
     background-color: transparent;
     animation: playbtn 1.5s ease-out infinite;
 }
-@keyframes playbtn{
-    0%{
+
+@keyframes playbtn {
+    0% {
         transform: scale(1);
         opacity: 0;
     }
-    25%{
+
+    25% {
         transform: scale(1.25);
         opacity: 8;
     }
-    50%{  transform: scale(1.5);
+
+    50% {
+        transform: scale(1.5);
         opacity: .5;
     }
-    75%{
+
+    75% {
         transform: scale(1.75);
         opacity: 0.25;
     }
-    100%{  transform: scale(2);
+
+    100% {
+        transform: scale(2);
         opacity: 0;
     }
 }
-.up-arrow{
+
+.up-arrow {
     right: 20px;
     bottom: 20px;
 }
 
 
-.up-arrow span{
+.up-arrow span {
     height: 50px;
     width: 50px;
     display: inline-block;
