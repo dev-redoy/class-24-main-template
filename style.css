@@ -12,6 +12,9 @@ img {
 .my-header {
     background-color: #D4D5CF;
     padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }
 
 .my-header img {
@@ -103,8 +106,7 @@ img {
     border: transparent;
     z-index: 1;
     font-weight: 600;
-
-
+    overflow: hidden;
 }
 
 .my-btn::before {
@@ -119,7 +121,6 @@ img {
     transition: .4s;
     opacity: 0;
     visibility: hidden;
-
 
 }
 
@@ -144,7 +145,6 @@ section {}
 
 .banner-section {
     background-color: #F6F9FC;
-    z-index: -1;
     position: relative;
     overflow: hidden;
     width: 1500px;
@@ -164,6 +164,8 @@ section {}
     color: #767676;
 }
 
+
+
 .banner-content .second-btn {
     background: #3763EB;
     font-weight: 600;
@@ -172,9 +174,17 @@ section {}
     display: inline-block;
     text-decoration: none;
     padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: .4s;
+    
 }
-.banner-content .second-btn:hover{
-    background: #000;
+
+
+
+.banner-content .second-btn:hover {
+	border: 1px solid #3763EB;
+	background: #fff;
+	color: #3763EB;
 }
 
 .banner-image {
@@ -305,13 +315,13 @@ section {}
 }
 
 /* footer-section  */
-.footer-section {
+.play-btn-section {
     background: linear-gradient(rgba(25, 40, 54, 0.9), rgba(25, 40, 54, 0.9)), url(img/video-bg.jpg) no-repeat top center;
     background-size: cover;
     padding: 100px 0;
 }
 
-.footer-section::before {
+.play-btn-section::before {
     content: "";
     height: 100%;
     width: 100%;
@@ -320,19 +330,19 @@ section {}
 
 .footer-content {}
 
-.footer-content h6 {
+.play-btn-content h6 {
     margin-bottom: 10px;
     font-size: 18px;
 }
 
-.footer-content h2 {
+.play-btn-content h2 {
     font-weight: 700;
     font-size: 40px;
     padding-bottom: 36px;
     position: relative;
 }
 
-.footer-content h2::before {
+.play-btn-content h2::before {
     content: "";
     position: absolute;
     left: 0;
@@ -345,7 +355,7 @@ section {}
     transition: .4s;
 }
 
-.footer-content p {
+.play-btn-content p {
     font-size: 17px;
     line-height: 1.7rem;
 }
@@ -425,6 +435,30 @@ section {}
         opacity: 0;
     }
 }
+
+/* pricing table section  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .up-arrow {
     right: 20px;
